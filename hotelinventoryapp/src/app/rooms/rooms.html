@@ -1,1 +1,7 @@
-<p>rooms works!</p>
+<h1>Welcome to {{hotelName}}</h1>
+<div [hidden]="OcultarQuartos">
+    Number of Rooms:
+    <div [innerText]="NumberofRooms"></div>
+</div>
+
+<button (click)="pesquisar()">Pesquisar</button>

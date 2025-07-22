@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-rooms',
@@ -6,6 +6,18 @@ import { Component } from '@angular/core';
   templateUrl: './rooms.html',
   styleUrl: './rooms.scss'
 })
-export class Rooms {
+export class Rooms implements OnInit {
+    hotelName = 'Hilton Hotel';
+    NumberofRooms = '10';
+    OcultarQuartos = true;
 
-}
+    constructor() {}
+
+    ngOnInit(): void{
+
+    }
+
+    pesquisar(){
+      this.OcultarQuartos = !this.OcultarQuartos;
+    }
+  }
