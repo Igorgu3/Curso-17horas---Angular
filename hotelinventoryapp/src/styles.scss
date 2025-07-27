@@ -3,4 +3,12 @@ body {
   background-color: rgb(141, 53, 53) !important;
   color: white;
   font-family: 'Times New Roman', Times, serif;
+  display: flex;
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center;     /* centraliza verticalmente */
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
 }
