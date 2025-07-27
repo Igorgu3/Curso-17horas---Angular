@@ -43,7 +43,7 @@ export class Rooms implements OnInit {
       numero: 3,
       tipo: 'Luxo',
       preco: 5000,
-      cortesias: 'Wi-fi, Café da manhã, Ar-condicionado, TV a cabo, Spa',
+      cortesias: 'Wi-fi, Café da manhã, Ar-condicionado, TV a cabo, SPA',
       photos: 'luxury-room.jpg',
       checkin: new Date('2025-07-27'),
       checkout: new Date('2025-07-28')

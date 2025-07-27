@@ -1,38 +1,40 @@
-<div *ngIf="exibir === false" style="text-align: center;">
-    <h1> Welcome to {{hotelName}}</h1>
-    <h2> Clique em "Pesquisar" para observar os quartos disponíveis!</h2>
+<div id="corpo">
+    <div *ngIf="exibir === false" style="text-align: center;">
+        <h1> Welcome to {{hotelName}}</h1>
+        <h2> Clique em "Pesquisar" para observar os quartos disponíveis!</h2>
+    </div>
+
+    <div *ngIf="exibir === true">
+        <h1>Lista de Quartos:</h1>
+
+        <table>
+            <tr>
+                <th>Número:</th>
+                <th>Tipo:</th>
+                <th>Preço:</th>
+                <th>Cortesia:</th>
+                <th>Check-in:</th>
+            </tr>
+            <tr *ngFor="let room of roomList" [ngClass]="room">
+                <td>{{room.numero}}</td>
+                <td>{{room.tipo}}</td>
+                <td>{{room.preco}}</td>
+                <td>{{room.cortesias}}</td>
+                <td>{{room.checkin | date: 'dd/MM/yyyy'}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div *ngIf="exibir === false" style="text-align: center;">
+        <button (click)="pesquisar()">Pesquisar</button>
+    </div>
+
+
+    <div *ngIf="exibir === true" style="text-align: center;">
+        <button (click)="pesquisar()">Ocultar</button>
+    </div>
+
+    <footer>
+        <p>&copy;Igor Araujo</p>
+    </footer>
 </div>
-
-<div *ngIf="exibir === true">
-    <h1>Lista de Quartos:</h1>
-
-    <table>
-        <tr>
-            <th>Número:</th>
-            <th>Tipo:</th>
-            <th>Preço:</th>
-            <th>Cortesia:</th>
-            <th>Check-in:</th>
-        </tr>
-        <tr *ngFor="let room of roomList" [ngClass]="room">
-            <td>{{room.numero}}</td>
-            <td>{{room.tipo}}</td>
-            <td>{{room.preco}}</td>
-            <td>{{room.cortesias}}</td>
-            <td>{{room.checkin | date: 'dd/MM/yyyy'}}</td>
-        </tr>
-    </table>
-</div>
-
-<div *ngIf="exibir === false" style="text-align: center;">
-    <button (click)="pesquisar()">Pesquisar</button>
-</div>
-
-
-<div *ngIf="exibir === true" style="text-align: center;">
-    <button (click)="pesquisar()">Ocultar</button>
-</div>
-
-<footer>
-    <p>&copy;Igor Araujo</p>
-</footer>
